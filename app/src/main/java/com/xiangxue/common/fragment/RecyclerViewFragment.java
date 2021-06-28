@@ -34,7 +34,7 @@ public class RecyclerViewFragment extends Fragment {
         final RecyclerAdapter adapter = new RecyclerAdapter(getData());
         recyclerView.setAdapter(adapter);
 
-        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+       /* recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
 
             private static final int THRESHOLD_LOAD_MORE = 3;
             private boolean hasLoadMore;
@@ -55,7 +55,7 @@ public class RecyclerViewFragment extends Fragment {
                     }
                 }
             }
-        });
+        });*/
         return view;
     }
 

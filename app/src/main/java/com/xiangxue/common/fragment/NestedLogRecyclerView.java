@@ -7,6 +7,7 @@ package com.xiangxue.common.fragment;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.MotionEvent;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -124,6 +125,15 @@ public class NestedLogRecyclerView extends RecyclerView {
     public boolean dispatchNestedPreFling(float velocityX, float velocityY) {
         Log.e("RecyclerViewNestedLog", "dispatchNestedPreFling");
         return super.dispatchNestedPreFling(velocityX, velocityY);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+
+        if(ev.getAction()==MotionEvent.ACTION_DOWN) {
+            requestDisallowInterceptTouchEvent(true);
+        }
+        return super.dispatchTouchEvent(ev);
     }
 }
 
